@@ -1,12 +1,11 @@
-import kaboom from "kaboom"
+import kaboom from "kaboom";
 
-const k = kaboom()
+const k = kaboom();
 
-k.loadSprite("bean", "sprites/bean.png")
+k.loadSprite("bean", "sprites/bean.png");
 
-k.add([
-	k.pos(120, 80),
-	k.sprite("bean"),
-])
+k.add([k.pos(120, 80), k.sprite("bean")]);
 
-k.onClick(() => k.addKaboom(k.mousePos()))
+console.log("Hello, Kaboom!");
+
+k.onClick(() => k.addKaboom(k.mousePos()));
