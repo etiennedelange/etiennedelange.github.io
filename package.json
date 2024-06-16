@@ -8,7 +8,7 @@
 		"dev-esbuild": "esbuild --bundle src/main.js --outfile=www/main.js --servedir=www",
 		"bundle-esbuild": "npm run build && mkdir -p dist && zip -r dist/game.zip www -x \"**/.DS_Store\"",
 		"dev": "vite",
-		"build": "tsc && vite build",
+		"build": "vite build",
 		"preview": "vite preview"
 	},
 	"dependencies": {
