@@ -31,7 +31,7 @@ jobs:
         with:
           node-version: '20.14.0'
       - run: yarn --frozen-lockfile
-      - run: yarn run build
+      - run: cd angular-sandbox && yarn run build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
