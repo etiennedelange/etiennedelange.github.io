@@ -1,13 +1,22 @@
 {
 	"name": "portfolio",
+	"type": "module",
+	"private": true,
+	"version": "0.0.1",
 	"scripts": {
-		"build": "esbuild --bundle src/main.js --outfile=www/main.js --minify",
-		"dev": "esbuild --bundle src/main.js --outfile=www/main.js --servedir=www",
-		"bundle": "npm run build && mkdir -p dist && zip -r dist/game.zip www -x \"**/.DS_Store\""
+		"build-esbuild": "esbuild --bundle src/main.js --outfile=www/main.js --minify",
+		"dev-esbuild": "esbuild --bundle src/main.js --outfile=www/main.js --servedir=www",
+		"bundle-esbuild": "npm run build && mkdir -p dist && zip -r dist/game.zip www -x \"**/.DS_Store\"",
+		"dev": "vite",
+		"build": "tsc && vite build",
+		"preview": "vite preview"
 	},
 	"dependencies": {
-		"esbuild": "^0.21.4",
 		"kaboom": "^3000.1.17",
 		"phaser": "^3.80.1"
+	},
+	"devDependencies": {
+		"terser": "^5.31.1",
+		"vite": "^5.3.1"
 	}
 }
