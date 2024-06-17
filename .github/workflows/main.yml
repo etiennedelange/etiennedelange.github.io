@@ -30,8 +30,8 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20.14.0'
-      - run: dir && cd portfolio && dir && yarn --frozen-lockfile && dir
-      - run: yarn run build
+      - run: cd portfolio && yarn --frozen-lockfile
+      - run: cd portfolio && yarn run build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
