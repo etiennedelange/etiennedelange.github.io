@@ -41,6 +41,9 @@ jobs:
             path: ./dist
   # Deployment job
   deploy:
+    defaults:
+      run:
+        working-directory: ./portfolio
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
