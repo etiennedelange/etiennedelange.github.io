@@ -22,6 +22,9 @@ concurrency:
 
 jobs:
   build:
+    defaults:
+      run:
+        working-directory: ./portfolio
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -30,8 +33,8 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20.14.0'
-      - run: cd portfolio && yarn --frozen-lockfile
-      - run: cd portfolio && yarn run build
+      - run: yarn --frozen-lockfile
+      - run: yarn run build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
