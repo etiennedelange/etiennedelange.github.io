@@ -20,11 +20,12 @@ concurrency:
   group: "pages"
   cancel-in-progress: false
 
+defaults:
+  run:
+    working-directory: ./portfolio
+
 jobs:
   build:
-    defaults:
-      run:
-        working-directory: ./portfolio
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -41,9 +42,6 @@ jobs:
             path: ./dist
   # Deployment job
   deploy:
-    defaults:
-      run:
-        working-directory: ./portfolio
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
